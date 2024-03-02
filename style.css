@@ -1,0 +1,172 @@
+/*
+div - all divs
+.thing - thing class
+#thing - thing ID
+*/
+
+body {
+    background: rgb(60, 56, 44);
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+#panel {
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 300px;
+    background-color: rgb(174, 156, 152);
+}
+
+.screen {
+    font-family: Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace;
+}
+
+.text {
+    font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+    color: rgb(215, 206, 190);
+}
+
+#name {
+    font-size: 32px;
+    top: -45px;
+    left: 95px;
+}
+
+#hello {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    font-size: 60px;
+}
+
+#hello>span {
+    opacity: 0%;
+}
+
+#parent {
+    margin-top: 100px;
+}
+
+#parent:hover>#hello>span {
+    opacity: 100%;
+}
+
+#parent:hover #letter1 {
+    transition-delay: 200ms;
+}
+
+#parent:hover #letter2 {
+    transition-delay: 400ms;
+}
+
+#parent:hover #letter3 {
+    transition-delay: 600ms;
+}
+
+#parent:hover #letter4 {
+    transition-delay: 800ms;
+}
+
+#parent:hover #letter5 {
+    transition-delay: 1000ms;
+}
+
+#parent:hover #letter6 {
+    transition-delay: 1200ms;
+}
+
+#parent:not(:hover) #letter6 {
+    transition-delay: 200ms;
+}
+
+#parent:not(:hover) #letter5 {
+    transition-delay: 400ms;
+}
+
+#parent:not(:hover) #letter4 {
+    transition-delay: 600ms;
+}
+
+#parent:not(:hover) #letter3 {
+    transition-delay: 800ms;
+}
+
+#parent:not(:hover) #letter2 {
+    transition-delay: 1000ms;
+}
+
+#parent:not(:hover) #letter1 {
+    transition-delay: 1200ms;
+}
+
+#parent:hover>#cursor {
+    transform: translateX(210px);
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+#cursor {
+    width: 2px;
+    height: 55px;
+    background-color: black;
+    position: absolute;
+    top: 115px;
+    left: 200px;
+    transition: 1000ms steps(6, end);
+    animation: blink 500ms steps(2, jump-none) infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+#mug {
+    width: 160px;
+    top: 160px;
+    left: 530px;
+    transition: transform .4s cubic-bezier(.34, .2, .56, .81);
+}
+
+#mug:hover {
+    transform: translatey(-28px);
+
+}
+
+#laptop {
+    width: 100%;
+}
+
+#snail {
+    width: 200px;
+    top: 240px;
+    left: 65px;
+    transform: translateX(340px);
+    transition: 240s linear;
+}
+
+.social {
+    top: 420px;
+    text-align: center;
+    opacity: 80%;
+}
+
+a {
+    text-decoration: none;
+}
