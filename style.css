@@ -36,20 +36,29 @@ body {
 }
 
 #name {
-    font-size: 32px;
-    top: -45px;
-    left: 95px;
+    font-size: 2em;
+    bottom: 100%;
+    left: 15%;
 }
 
 #hello {
     position: absolute;
-    top: 100px;
-    left: 200px;
+    top: 26%;
+    left: 34%;
+    font-size: 9cqw;
 }
 
 #parent {
-    margin-top: 100px;
-    font-size: 60px;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    aspect-ratio: 1895/1215;
+    height: auto;
+    container-type: inline-size;
+}
+
+#laptop {
+    width: 100%;
 }
 
 #parent>#hello>span {
@@ -109,10 +118,6 @@ body {
     transition-delay: 1200ms;
 }
 
-#parent:hover>#cursor {
-    transform: translateX(210px);
-}
-
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -121,11 +126,11 @@ body {
 
 #cursor {
     width: 2px;
-    height: 55px;
+    height: 15%;
     background-color: black;
     position: absolute;
-    top: 115px;
-    left: 200px;
+    top: 29%;
+    left: 33%;
     transition: 1000ms steps(6, end);
     animation: blink 500ms steps(2, jump-none) infinite alternate;
 }
@@ -140,43 +145,43 @@ body {
     }
 }
 
+#parent:hover>#cursor {
+    left: 70%;
+}
+
 #mug {
-    width: 160px;
-    top: 160px;
-    left: 530px;
+    width: 25%;
+    top: 45%;
+    left: 90%;
     transition: transform .4s cubic-bezier(.34, .2, .56, .81);
 }
 
 #mug:hover {
-    transform: translatey(-28px);
+    transform: translatey(-20%);
 
-}
-
-#laptop {
-    width: 100%;
 }
 
 #snail {
-    width: 200px;
-    top: 240px;
-    left: 65px;
-    animation: 240s linear slide forwards;
+    width: 33%;
+    top: 65%;
+    left: 10%;
+    animation: 5s linear slide forwards;
 }
 
 @keyframes slide {
     0% {
-        transform: translateX(0px);
+        left: 10%;
     }
 
     100% {
-        transform: translateX(340px);
+        left: 60%;
     }
 }
 
 .social {
-    top: 420px;
     text-align: center;
     opacity: 80%;
+    font-size: 1em;
 }
 
 a {
