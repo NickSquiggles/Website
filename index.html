@@ -17,7 +17,7 @@
         <div class="absolute text" id="name"> Nick Steer</div>
         <img class="absolute" id="snail" src="Snail.png" alt="Snail">
         <div id="cursor"></div>
-        <div class="screen" id="hello">
+        <div class="screen no-transition" id="hello">
             <span id="letter1">H</span><span id="letter2">e</span><span id="letter3">l</span><span
                 id="letter4">l</span><span id="letter5">o</span><span id="letter6">.</span>
         </div>
@@ -31,6 +31,10 @@
             href="mailto:contact@nicksteer.com"></a>
     </div>
 
+    <script>
+        function transitionAfterPageLoad() { document.getElementById("hello").classList.remove("no-transition"); }
+        (function () { transitionAfterPageLoad(); })()
+    </script>
 </body>
 
 </html>
