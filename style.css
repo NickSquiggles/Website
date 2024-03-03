@@ -26,6 +26,13 @@ body {
     background-color: rgb(174, 156, 152);
 }
 
+@media (max-width: 600px) {
+    #panel {
+        height: auto;
+        aspect-ratio: 2 / 1;
+    }
+}
+
 .screen {
     font-family: Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace;
 }
@@ -45,7 +52,7 @@ body {
     position: absolute;
     top: 26%;
     left: 34%;
-    font-size: 9cqw;
+    font-size: 10cqw;
 }
 
 #parent {
@@ -165,7 +172,7 @@ body {
     width: 33%;
     top: 65%;
     left: 10%;
-    animation: 5s linear slide forwards;
+    animation: 240s linear slide forwards;
 }
 
 @keyframes slide {
