@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Nick Steer</title>
 </head>
@@ -13,6 +12,9 @@
 <body>
     <div class="absolute" id="panel"></div>
     <div class="relative center" id="parent">
+        <img class="absolute" id="comicstack" src="Comic.png" alt="Comic">
+        <a target="_blank" href="https://takonigiri.com"><img class="absolute" id="comicpage" src="ComicPage.png"
+                alt="Comic Page"></a>
         <img class="absolute" id="laptop" src="Laptop.png" alt="Laptop">
         <img class="absolute" id="mug" src="Mug.png" alt="Mug">
         <div class="absolute text" id="name"> Nick Steer</div>
@@ -24,14 +26,14 @@
         </div>
     </div>
     <div class="social">
-        <p class="relative text social"> Contact:</p>
-        <a class="fa fa-instagram fa-4x relative text social" aria-hidden="true"
-            href="https://www.instagram.com/nicksquiggles/"></a>
-        &nbsp; &nbsp; &nbsp;
-        <a class="fa fa-envelope-o fa-4x relative text social" aria-hidden="true"
-            href="mailto:contact@nicksteer.com"></a>
+        <p class="text social">Contact:</p>
+        <a target="_blank" href="https://www.goodreads.com/user/show/25787778-nick"><i
+                class="ph-fill ph-goodreads-logo"></i></a>
+        <a href="mailto:contact@nicksteer.com"><i class="ph-fill ph-envelope-simple"></i></a>
+        <a target="_blank" href="https://www.instagram.com/nicksquiggles/"><i class="ph-fill ph-instagram-logo"></i></a>
     </div>
 
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script>
         function transitionAfterPageLoad() { document.getElementById("hello").classList.remove("no-transition"); }
         (function () { transitionAfterPageLoad(); })()
