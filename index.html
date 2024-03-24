@@ -20,9 +20,11 @@
         <div class="absolute text" id="name"> Nick Steer</div>
         <img class="absolute" id="snail" src="Snail.png" alt="Snail">
         <div id="cursor"></div>
-        <div class="screen no-transition" id="hello">
-            <span id="letter1">H</span><span id="letter2">e</span><span id="letter3">l</span><span
-                id="letter4">l</span><span id="letter5">o</span><span id="letter6">.</span>
+        <div class="absolute" id="projects">
+            <p class="line animated">Currently working on:</p>
+            <p class="line animated">- Project Floret final draft</p>
+            <p class="line animated">- Tako Nigiri Vol. 4</p>
+            <p class="line animated">- Outlining a new project!</p>
         </div>
     </div>
     <div class="social">
@@ -38,6 +40,41 @@
         function transitionAfterPageLoad() { document.getElementById("hello").classList.remove("no-transition"); }
         (function () { transitionAfterPageLoad(); })()
     </script>
+
+    <script>
+        const enhance = (cls) => {
+            multiplier = 20;
+            const elements = document.querySelectorAll(cls);
+            for (element of elements) {
+                const text = element.innerText.split("");
+
+                element.innerText = "";
+
+                text.forEach((value, index) => {
+                    const letter = document.createElement("span");
+
+                    letter.className = "letter";
+
+                    if (value === " ") {
+                        letter.innerHTML = "&nbsp";
+                    } else {
+                        letter.innerText = value;
+                    }
+
+                    multiplier += 1;
+
+                    letter.style.animationDelay = `${multiplier * 100}ms`;
+
+                    element.appendChild(letter);
+                });
+            }
+        };
+
+        enhance(".animated");
+
+    </script>
+
+
 </body>
 
 </html>

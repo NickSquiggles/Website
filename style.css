@@ -33,10 +33,6 @@ body {
     }
 }
 
-.screen {
-    font-family: Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace;
-}
-
 .text {
     font-family: Arial Black, Arial Bold, Gadget, sans-serif;
     color: rgb(215, 206, 190);
@@ -48,19 +44,76 @@ body {
     left: 15%;
 }
 
-#hello {
-    position: absolute;
-    top: 26%;
-    left: 34%;
-    font-size: 10cqw;
+#projects {
+    font-family: Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace;
+    font-size: 3cqw;
+    top: 3%;
+    left: 20%;
 }
 
-#working-on {
+.animated>.letter {
+    display: inline-block;
+    opacity: 0%;
+    animation: type 200ms steps(2, jump-none);
+    animation-fill-mode: forwards;
+}
+
+@keyframes type {
+    0% {
+        border-right: none;
+        opacity: 0%;
+    }
+
+    50% {
+        border-right: 2px solid black;
+        opacity: 100%;
+    }
+
+    100% {
+        border-right: none;
+        opacity: 100%;
+    }
+}
+
+#cursor {
+    width: 2px;
+    height: 8%;
+    background-color: black;
+    opacity: 0%;
     position: absolute;
     top: 8%;
     left: 20%;
-    font-size: 3cqw;
+    animation: blink 1000ms steps(2, jump-none);
+    animation-iteration-count: 2;
 }
+
+@keyframes blink {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+#projects>p:last-child>.letter:last-child {
+    animation: lastletter 500ms steps(2, jump-none) infinite alternate;
+}
+
+
+@keyframes lastletter {
+    0% {
+        border-right: none;
+        opacity: 100%;
+    }
+
+    100% {
+        border-right: 2px solid black;
+        opacity: 100%;
+    }
+}
+
 
 #parent {
     margin-top: 6rem;
@@ -155,31 +208,6 @@ body {
     width: 600px;
 }
 
-#cursor {
-    width: 2px;
-    height: 15%;
-    background-color: black;
-    position: absolute;
-    top: 29%;
-    left: 33%;
-    transition: 1000ms steps(6, end);
-    animation: blink 500ms steps(2, jump-none) infinite alternate;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 0%;
-    }
-
-    100% {
-        opacity: 100%;
-    }
-}
-
-#parent:hover>#cursor {
-    left: 70%;
-}
-
 #mug {
     width: 25%;
     top: 45%;
@@ -209,9 +237,16 @@ body {
     }
 }
 
+#contact {
+    width: 7%;
+    top: 72%;
+    left: 46%;
+}
+
 .social {
     text-align: center;
     color: rgb(184, 175, 161);
+    /* margin-top: 4rem; */
 }
 
 i.ph-fill {
