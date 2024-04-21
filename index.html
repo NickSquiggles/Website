@@ -21,10 +21,6 @@
         <img class="absolute" id="snail" src="Snail.png" alt="Snail">
         <div id="cursor"></div>
         <div class="absolute" id="projects">
-            <p class="line animated">Currently working on:</p>
-            <p class="line animated">- Project Floret final draft</p>
-            <p class="line animated">- Tako Nigiri Vol. 4</p>
-            <p class="line animated">- Outlining a new project!</p>
         </div>
     </div>
     <div class="social">
@@ -36,21 +32,23 @@
     </div>
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script>
-        function transitionAfterPageLoad() { document.getElementById("hello").classList.remove("no-transition"); }
-        (function () { transitionAfterPageLoad(); })()
-    </script>
 
     <script>
-        const enhance = (cls) => {
+        async function getStatus() {
+            const resp = await fetch("https://gist.githubusercontent.com/NickSquiggles/2c03616012bd676389b58833ae6f9386/raw")
+            const text = await resp.text();
+            return text;
+        }
+
+        async function enhance(cls) {
+            const text = await getStatus();
             multiplier = 20;
-            const elements = document.querySelectorAll(cls);
-            for (element of elements) {
-                const text = element.innerText.split("");
-
-                element.innerText = "";
-
-                text.forEach((value, index) => {
+            const lines = text.split("\n");
+            const projects = document.getElementById("projects");
+            for (line of lines) {
+                const p = document.createElement("p");
+                p.className = "line animated";
+                for (value of line) {
                     const letter = document.createElement("span");
 
                     letter.className = "letter";
@@ -65,8 +63,9 @@
 
                     letter.style.animationDelay = `${multiplier * 100}ms`;
 
-                    element.appendChild(letter);
-                });
+                    p.appendChild(letter);
+                }
+                projects.appendChild(p);
             }
         };
 
